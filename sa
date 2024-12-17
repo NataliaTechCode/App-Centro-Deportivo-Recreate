@@ -1,0 +1,51 @@
+// import "react-native-gesture-handler";
+// import { createStackNavigator } from "@react-navigation/stack";
+import "react-native-gesture-handler";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+
+import Home from "./screens/Home";
+import ShowStudent from "./screens/ShowStudent";
+import ShowSport from "./screens/ShowSports";
+import ShowSchedule from "./screens/ShowSchedule";
+import ShowMonthly from "./screens/ShowMontly";
+import ShowActivity from "./screens/ShowActivity";
+import Information from "./screens/Information";
+
+// import ShowStudentM from "./screens/ShowStudentM";
+
+export default function App() {
+  const Stack = createStackNavigator();
+
+  function MyStack() {
+    return (
+      <Stack.Navigator screenOptions={screenOptions}>
+        <Stack.Screen name="home" component={Home} />
+        <Stack.Screen name="MonthlyStudent" component={ShowStudent} />
+        <Stack.Screen name="Sport" component={ShowSport} />
+        <Stack.Screen name="Schedule" component={ShowSchedule} />
+        <Stack.Screen name="Monthly" component={ShowMonthly} />
+        <Stack.Screen name="Activity" component={ShowActivity} />
+        <Stack.Screen name="Information" component={Information} />
+      </Stack.Navigator>
+    );
+  }
+
+  return (
+    <View style={styles.container}>
+          <Apps />
+        </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+r;
